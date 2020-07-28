@@ -37,6 +37,6 @@ for(i=0;i<size;i++){ t=0;
 	if(min>t)
 		min = t;
 } 
-       printf("min = %d\n",min);
+       printf("%d\n",min);
 
 }
