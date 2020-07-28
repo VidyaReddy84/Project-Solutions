@@ -2,8 +2,8 @@
 int main(){
 	int n_participants,time,winner,n_elements;
 	scanf("%d%d",&n_participants,&time);
-	int  s[n_participants][time+1],row,col,dist[10][10],lead[3];
-	int  max=0,count[3] = {0};
+	int  s[n_participants][time+1],row,col,dist[10][10],lead[100];
+	int  max=0,count[100] = {0};
 	for(row=0;row<n_participants;row++){
 	    for(col=0;col<time+1;col++){
 		scanf("%d",&s[row][col]);
