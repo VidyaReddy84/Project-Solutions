@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void headTOtail(char *ht){
+	int i,l = strlen(ht);
+	char temp = ht[0];
+	for(i=0;i<l-1;i++)
+	ht[i] = ht[i+1]; 
+	ht[l-1] = temp;
+}
+void tailTOhead(char *th){
+	int i,l=strlen(th);
+	char temp = th[l-1];
+	for(i=l-1;i>=0;i--)
+	th[i] = th[i-1];
+	th[0] = temp;
+}
+int palindrome(char ht[],char th[]){
+	char revht[100],revth[100];
+    strcpy(revht,ht);
+    strcpy(revth,th);
+	if(strcmp(strrev(revht),ht) == 0 || strcmp(strrev(revth),th) == 0)
+	return 1;
+	else
+	return 0;
+}
+int main(){
+	int t;
+	scanf("%d",&t);
+	end: while(t>0){ t--;
+	char ht[100],th[100];
+    scanf("%s",ht);
+	int count=0,len,t;
+	len = strlen(ht);
+	strcpy(th,ht);
+	label:
+	headTOtail(ht);
+	tailTOhead(th);
+	count++;
+	t = palindrome(ht,th);
+	if(t==1){
+		printf("%d",count);
+		goto end;
+	}
+	else{
+		if(count<len)
+		goto label;
+		else{
+			printf("-1");
+			goto end;
+		}
+	}
+}
+	return 0;
+}
